@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>今野原鉄道の歴史 | 今野原新鉄道株式会社</title>
+  <link rel="stylesheet" href="css/company.css">
+  <style>
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .photo-grid .placeholder-photo {
+      cursor: zoom-in;
+    }
+    .photo-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+    .photo-modal img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="c-header">
+    <div class="c-header-inner">
+      <div class="c-logo">
+        <h1>今野原新鉄道株式会社</h1>
+        <span>Imanohara Shin-Tetsudo Holdings</span>
+      </div>
+      <nav class="c-nav">
+        <ul>
+          <li><a href="index.html">企業情報</a></li>
+          <li><a href="philosophy.html">企業理念</a></li>
+          <li><a href="history.html">沿革</a></li>
+          <li><a href="energy.html">新エネルギー開発部</a></li>
+          <li><a href="president.html">社長プロフィール</a></li>
+          <li><a href="recruit.html">採用情報</a></li>
+          <li><a href="../index.html">運行サイトへ</a></li>
+        </ul>
+      </nav>
+      <div class="c-search">
+        <input type="text" id="searchInput" placeholder="サイト内検索">
+        <button onclick="checkKeyword()">検索</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="c-main">
+
+    <section class="c-card">
+      <h2>沿革</h2>
+      <table class="data-table">
+        <tbody>
+          <tr><th>1928年</th><td>今野原電気鉄道株式会社、創業</td></tr>
+          <tr><th>1980年</th><td>二代目社長（初代の息子）就任</td></tr>
+          <tr><th>1990年</th><td>経営不振に陥る</td></tr>
+          <tr><th>2010年</th><td>三代目社長（二代目の孫）就任。新エネルギー研究部署を新設し、社名を「今野原新鉄道株式会社」に変更</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="c-card">
+      <h2>写真アーカイブ</h2>
+      <p>創業当時から現在までの貴重な写真を一部公開しています。</p>
+      <!-- TODO: 実際の実装では、このうち1枚の背景に「宵隠」駅のホームが
+           偶然写り込んでいる構図の写真に差し替える（沿革ページのコアパズル）。
+           プレースホルダー段階では全て同一の仮画像。 -->
+      <div class="photo-grid">
+        <div class="placeholder-photo" onclick="openPhoto(1)">写真1：創業式典（プレースホルダー）</div>
+        <div class="placeholder-photo" onclick="openPhoto(2)">写真2：二代目社長就任式（プレースホルダー）</div>
+        <div class="placeholder-photo" onclick="openPhoto(3)">写真3：現場視察の様子（プレースホルダー）</div>
+        <div class="placeholder-photo" onclick="openPhoto(4)">写真4：三代目社長就任式（プレースホルダー）</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="c-footer">
+    <p>© 2026 今野原新鉄道株式会社</p>
+    <p>このHPは実在するものと関係ありません。</p>
+  </footer>
+
+  <div class="photo-modal" id="photoModal" hidden onclick="closePhoto()">
+    <img id="photoModalImg" src="" alt="拡大写真（プレースホルダー）">
+  </div>
+
+  <script src="js/search.js"></script>
+  <script>
+    function openPhoto(n) {
+      // TODO: 実際の画像パスに差し替え
+      document.getElementById("photoModalImg").alt = "写真" + n + "（拡大・プレースホルダー）";
+      document.getElementById("photoModal").hidden = false;
+    }
+    function closePhoto() {
+      document.getElementById("photoModal").hidden = true;
+    }
+  </script>
+</body>
+</html>

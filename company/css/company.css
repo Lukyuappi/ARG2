@@ -1,0 +1,196 @@
+/* サイトB：今野原新鉄道株式会社（企業サイト）
+   サイトAの紺（#0a2a52）を引き継ぎつつ、重く・硬い企業サイトの印象にする */
+
+body {
+  margin: 0;
+  font-family: "游明朝", "Yu Mincho", serif;
+  background: #e9eaec;
+  color: #222;
+}
+
+.c-header {
+  background: #15171c;
+  color: #fff;
+  padding: 18px 0;
+  border-bottom: 3px solid #0a2a52;
+}
+
+.c-header-inner {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.c-logo h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.c-logo span {
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+.c-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.c-nav a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 6px 0;
+}
+
+.c-nav a:hover {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.c-search {
+  display: flex;
+  gap: 6px;
+}
+
+.c-search input {
+  padding: 6px 8px;
+  border: 1px solid #444;
+  background: #1f2127;
+  color: #fff;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+.c-search button {
+  padding: 6px 12px;
+  border: none;
+  background: #0a2a52;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.c-main {
+  width: 90%;
+  max-width: 1000px;
+  margin: 36px auto;
+}
+
+.c-card {
+  background: #fff;
+  padding: 28px 32px;
+  margin-bottom: 28px;
+  border: 1px solid #d4d6da;
+  border-radius: 2px;
+}
+
+.c-card h2 {
+  margin-top: 0;
+  border-left: 4px solid #0a2a52;
+  padding-left: 12px;
+}
+
+.c-button {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 20px;
+  background: #15171c;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 2px;
+  font-size: 13px;
+}
+
+.c-footer {
+  background: #15171c;
+  color: #aaa;
+  text-align: center;
+  padding: 18px;
+  font-size: 12px;
+}
+
+.c-footer a {
+  color: #aaa;
+}
+
+/* 秘匿文書・公文書風の体裁 */
+.official-doc {
+  background: #fdfdfb;
+  border: 1px solid #999;
+  padding: 24px;
+  font-family: "MS Mincho", serif;
+  position: relative;
+}
+
+.official-doc .stamp {
+  color: #b00020;
+  font-weight: bold;
+  border: 2px solid #b00020;
+  display: inline-block;
+  padding: 4px 10px;
+  transform: rotate(-3deg);
+  margin-bottom: 16px;
+}
+
+.password-gate {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.password-gate input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #999;
+}
+
+.password-gate button {
+  padding: 8px 16px;
+  background: #15171c;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.gate-error {
+  color: #b00020;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* テーブル共通 */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid #c9cbcf;
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.data-table th {
+  background: #f1f2f4;
+  width: 160px;
+}

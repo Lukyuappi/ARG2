@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>社長プロフィール | 今野原新鉄道株式会社</title>
+  <link rel="stylesheet" href="css/company.css">
+</head>
+<body>
+
+  <header class="c-header">
+    <div class="c-header-inner">
+      <div class="c-logo">
+        <h1>今野原新鉄道株式会社</h1>
+        <span>Imanohara Shin-Tetsudo Holdings</span>
+      </div>
+      <nav class="c-nav">
+        <ul>
+          <li><a href="index.html">企業情報</a></li>
+          <li><a href="philosophy.html">企業理念</a></li>
+          <li><a href="history.html">沿革</a></li>
+          <li><a href="energy.html">新エネルギー開発部</a></li>
+          <li><a href="president.html">社長プロフィール</a></li>
+          <li><a href="recruit.html">採用情報</a></li>
+          <li><a href="../index.html">運行サイトへ</a></li>
+        </ul>
+      </nav>
+      <div class="c-search">
+        <input type="text" id="searchInput" placeholder="サイト内検索">
+        <button onclick="checkKeyword()">検索</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="c-main">
+
+    <section class="c-card">
+      <h2>代表取締役社長プロフィール</h2>
+      <p>
+        二代目社長の孫として生まれ、2010年に三代目社長として就任。経営難にあった会社を
+        新エネルギー事業で立て直した。趣味は読書。（TODO：プロフィール本文を差し替え）
+      </p>
+    </section>
+
+    <section class="c-card">
+      <h2>社長の日記</h2>
+      <p>社内関係者限定のコンテンツです。パスワードをご存知の方のみご覧いただけます。</p>
+      <!-- TODO: パスワードは CHANGE_ME の仮値です。ヒントは沿革・企業理念など既出情報から
+           拾える設計を想定（11章：未決定事項）。 -->
+      <div class="password-gate">
+        <input type="password" id="diaryPassword" placeholder="パスワード">
+        <button onclick="checkPassword('diaryPassword', 'diaryError', 'CHANGE_ME', 'hidden/diary-1.html')">日記を読む</button>
+      </div>
+      <p class="gate-error" id="diaryError" hidden>パスワードが正しくありません。</p>
+    </section>
+
+  </main>
+
+  <footer class="c-footer">
+    <p>© 2026 今野原新鉄道株式会社</p>
+    <p>このHPは実在するものと関係ありません。</p>
+  </footer>
+
+  <script src="js/search.js"></script>
+  <script src="js/password.js"></script>
+</body>
+</html>

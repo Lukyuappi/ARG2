@@ -73,9 +73,77 @@ body {
 
 /* メインビジュアル */
 .hero {
-  background: url("img/hero.jpg") center/cover no-repeat;
+  background: #0a2a52 url("img/hero.jpg") center/cover no-repeat;
   height: 260px;
   position: relative;
+}
+
+.external-link {
+  border-bottom: 1px dotted rgba(255,255,255,0.6);
+}
+
+.external-link::after {
+  content: " ↗";
+  font-size: 11px;
+}
+
+/* テーブル共通 */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid #dde2e8;
+  padding: 8px 10px;
+  text-align: center;
+}
+
+.data-table th {
+  background: #0a2a52;
+  color: #fff;
+}
+
+.fare-hidden {
+  background: #111;
+  color: #111;
+  user-select: none;
+}
+
+.station-search {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.station-search input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.station-search button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #0a2a52;
+  color: #fff;
+  cursor: pointer;
+}
+
+.placeholder-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #c9d2dc;
+  color: #5a6674;
+  font-size: 13px;
+  border-radius: 6px;
+  aspect-ratio: 4 / 3;
 }
 
 .hero-overlay {

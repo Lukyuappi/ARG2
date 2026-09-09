@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>路線図・駅情報 | 今野原鉄道株式会社</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <h1>今野原鉄道株式会社</h1>
+        <span>Imanohara Railway</span>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">トップ</a></li>
+          <li><a href="timetable.html">時刻表</a></li>
+          <li><a href="route.html">路線図・駅情報</a></li>
+          <li><a href="fare.html">運賃・お得なきっぷ</a></li>
+          <li><a href="news.html">お知らせ</a></li>
+          <li><a href="guide.html">ご利用案内</a></li>
+          <li><a href="company/philosophy.html" class="external-link">企業理念</a></li>
+          <li><a href="company/recruit.html" class="external-link">新卒採用</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="operation-banner">
+    <p>現在、全線平常通り運行しています。</p>
+  </section>
+
+  <main class="main">
+
+    <section class="card">
+      <h2>路線図</h2>
+      <p>今野原（起点）〜美景（終点）の全12駅を運行しています。（TODO：路線図画像を追加）</p>
+      <div class="placeholder-photo" style="aspect-ratio:16/5;">路線図プレースホルダー</div>
+    </section>
+
+    <section class="card">
+      <h2>駅情報を探す</h2>
+      <p>駅名を入力して検索してください。</p>
+      <div class="station-search">
+        <input type="text" id="stationSearchInput" placeholder="例：今野原">
+        <button onclick="searchStation()">検索</button>
+      </div>
+      <p id="stationSearchResult" style="margin-top:10px; font-size:14px;"></p>
+    </section>
+
+    <section class="card">
+      <h2>今野原駅</h2>
+      <p>当社の起点駅であり、営業所を併設しています。地域の皆様の通勤・通学の拠点です。</p>
+    </section>
+
+    <section class="card">
+      <h2>飛賀野駅</h2>
+      <p>リニューアルした「日下部ゆうえんち」へ向かうシャトルバスが発着する駅です。行楽シーズンは多くのお客様にご利用いただいています。</p>
+    </section>
+
+    <section class="card">
+      <h2>美景駅</h2>
+      <p>当社の公式な終端駅です。駅周辺には古くから伝わる民話も残されています。（TODO：民話の詳細記事へのリンク）</p>
+    </section>
+
+    <section class="card">
+      <h2>その他の駅</h2>
+      <p>宇津河・御花塚・蓮丘・稲崎・南飛賀野・樺山・矛谷・標・珠谷の各駅情報は準備中です。</p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 今野原鉄道株式会社</p>
+    <p>このHPは実在するものと関係ありません。</p>
+  </footer>
+
+  <script>
+    // TODO: 本実装では「宵隠」以外の検索語でも各駅の紹介文に遷移させる想定。
+    // 現状は都市伝説記事（Easter egg）への導線のみ仮実装。
+    function searchStation() {
+      const input = document.getElementById("stationSearchInput").value.trim();
+      const result = document.getElementById("stationSearchResult");
+      const legendKeywords = ["宵隠", "宵待", "よがくれ", "13番目", "存在しない駅"];
+
+      if (legendKeywords.includes(input)) {
+        window.location.href = "legend.html";
+      } else if (input === "") {
+        result.textContent = "駅名を入力してください。";
+      } else {
+        result.textContent = "該当する駅情報は見つかりませんでした。";
+      }
+    }
+  </script>
+</body>
+</html>
