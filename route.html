@@ -53,17 +53,17 @@
 
     <section class="card">
       <h2>今野原駅</h2>
-      <p>当社の起点駅であり、営業所を併設しています。地域の皆様の通勤・通学の拠点です。</p>
+      <p>今野原鉄道営業所が位置する駅。<br>飛賀野の交通を支えるバスの始発点にもなっています。</p>
     </section>
 
     <section class="card">
       <h2>飛賀野駅</h2>
-      <p>リニューアルした「日下部ゆうえんち」へ向かうシャトルバスが発着する駅です。行楽シーズンは多くのお客様にご利用いただいています。</p>
+      <p>飛賀野市の中心部にある勤め人や学生で賑わう駅です。<br>先日リニューアルした日下部ゆうえんちへ向かうシャトルバスが運行中。</p>
     </section>
 
     <section class="card">
       <h2>美景駅</h2>
-      <p>当社の公式な終端駅です。駅周辺には古くから伝わる民話も残されています。（TODO：民話の詳細記事へのリンク）</p>
+      <p>今野原鉄道終端の静かな駅。<br>近くに神社や昔から語り継がれる民話も多い風情を残す場所にあります。</p>
     </section>
 
     <section class="card">
@@ -79,12 +79,13 @@
   </footer>
 
   <script>
-    // TODO: 本実装では「宵隠」以外の検索語でも各駅の紹介文に遷移させる想定。
-    // 現状は都市伝説記事（Easter egg）への導線のみ仮実装。
+    // 「美景」で検索すると、衰弱死の都市伝説（本筋）と美景の民話（ミスリード）の
+    // 2本を掲載したオカルト雑誌特集ページ（legend.html）へ遷移する。
+    // TODO: 本実装では他の駅名でも各駅の紹介文に遷移させる想定。
     function searchStation() {
       const input = document.getElementById("stationSearchInput").value.trim();
       const result = document.getElementById("stationSearchResult");
-      const legendKeywords = ["宵隠", "宵待", "よがくれ", "13番目", "存在しない駅"];
+      const legendKeywords = ["美景", "みかげ"];
 
       if (legendKeywords.includes(input)) {
         window.location.href = "legend.html";
