@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>説明会アーカイブ | 今野原新鉄道株式会社 キャリア採用</title>
+  <link rel="stylesheet" href="css/mypage.css">
+</head>
+<body>
+
+  <header class="m-header">
+    <div class="m-header-inner">
+      <div class="m-brand">
+        今野原新鉄道株式会社 キャリア採用マイページ
+        <small>Imanohara Shin-Tetsudo Holdings / Career Entry</small>
+      </div>
+      <div class="m-user">
+        受付番号 <span data-applicant-id></span>　<span data-name></span> 様
+        <button onclick="logout()">ログアウト</button>
+      </div>
+    </div>
+  </header>
+  <nav class="m-nav">
+    <ul>
+      <li><a href="mypage.html">マイページTOP</a></li>
+      <li><a href="messages.html">メッセージBOX</a></li>
+      <li><a href="movie.html">会社紹介PV</a></li>
+      <li><a href="seminar.html" class="is-current">説明会アーカイブ</a></li>
+      <li><a href="interview.html">社員インタビュー</a></li>
+    </ul>
+  </nav>
+
+  <main class="m-main">
+    <section class="m-card">
+      <h2>キャリア採用 会社説明会（アーカイブ配信）</h2>
+
+      <!-- TODO：動画が完成したら movie.html と同じ手順で video-box の中に埋め込む -->
+      <div class="video-box">
+        <p>映像は現在準備中です<br>下の文字起こしをご覧ください</p>
+      </div>
+    </section>
+
+    <section class="m-card">
+      <h2>文字起こし</h2>
+      <!-- ★謎解き導線：「社長メッセージ」の段落に社長の日記パスワードのヒントを仕込む。
+           パスワード本体は president.html の CHANGE_ME。ヒント文と正解を揃えて差し替えること -->
+      <dl class="transcript">
+        <dt>司会（人事部 採用担当）</dt>
+        <dd>
+          皆様、本日はお忙しい中ご参加いただきありがとうございます。今野原新鉄道株式会社、キャリア採用の会社説明会を始めさせていただきます。
+          前半は会社概要、後半は新エネルギー開発部より業務内容のご説明、最後に質疑応答の時間を設けております。
+        </dd>
+
+        <dt>司会</dt>
+        <dd>
+          当社は1928年、今野原電気鉄道株式会社として創業いたしました。2010年に現社長が就任し、社名を現在の今野原新鉄道株式会社へと改めております。
+          詳しい歩みは、企業サイトの「沿革」ページもぜひご覧ください。
+        </dd>
+
+        <dt>社長メッセージ（ビデオ）</dt>
+        <dd>
+          皆さん、こんにちは。社長の（TODO：社長名）です。私が経営者として大切にしている言葉があります。
+          それは「（TODO：日記パスワードのヒントになる言葉。例：沿革や企業理念の一節と結びつくもの）」です。
+          この言葉を胸に、私は会社を立て直してまいりました。
+        </dd>
+
+        <dt>三上 成行（新エネルギー開発部 代表）</dt>
+        <dd>
+          新エネルギー開発部の三上です。私どもの部署は、今野原鉄道の運行に必要なエネルギーを生み出す、いわば心臓部です。
+          キャリア採用で入社された方には、まず沿線の各所で運行管理の補助をしていただきます。特別な資格や経験は必要ありません。
+          必要なのは、健康な身体と、そうですね……少しの「適性」だけです。
+        </dd>
+
+        <dt>司会</dt>
+        <dd>それでは質疑応答に移ります。事前にいただいたご質問から読み上げます。</dd>
+
+        <dt>質問（参加者）</dt>
+        <dd>新エネルギーとは、具体的にどのようなエネルギーなのでしょうか。</dd>
+
+        <dt>三上 成行</dt>
+        <dd>
+          はい。具体的には、えー、
+          <span class="glitch">（以降、約4分間 音声が記録されていません）</span>
+        </dd>
+
+        <dt>司会</dt>
+        <dd>……以上で本日の説明会を終了いたします。選考は本アーカイブのご視聴をもって開始となります。ありがとうございました。</dd>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="m-footer">
+    <p>Powered by キャリアゲート採用管理システム</p>
+    <p>このHPは実在するものと関係ありません。</p>
+  </footer>
+
+  <script src="js/mypage.js"></script>
+  <script>
+    if (requireLogin()) setFlag("watched_seminar");
+  </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>社員インタビュー | 今野原新鉄道株式会社 キャリア採用</title>
+  <link rel="stylesheet" href="css/mypage.css">
+</head>
+<body>
+
+  <header class="m-header">
+    <div class="m-header-inner">
+      <div class="m-brand">
+        今野原新鉄道株式会社 キャリア採用マイページ
+        <small>Imanohara Shin-Tetsudo Holdings / Career Entry</small>
+      </div>
+      <div class="m-user">
+        受付番号 <span data-applicant-id></span>　<span data-name></span> 様
+        <button onclick="logout()">ログアウト</button>
+      </div>
+    </div>
+  </header>
+  <nav class="m-nav">
+    <ul>
+      <li><a href="mypage.html">マイページTOP</a></li>
+      <li><a href="messages.html">メッセージBOX</a></li>
+      <li><a href="movie.html">会社紹介PV</a></li>
+      <li><a href="seminar.html">説明会アーカイブ</a></li>
+      <li><a href="interview.html" class="is-current">社員インタビュー</a></li>
+    </ul>
+  </nav>
+
+  <main class="m-main">
+
+    <section class="m-card">
+      <h2>社員インタビュー</h2>
+      <p style="font-size:14px;">今野原新鉄道で働く社員に、仕事のやりがいを聞きました。</p>
+    </section>
+
+    <section class="m-card">
+      <div class="interview">
+        <div class="interview-photo">写真（仮）</div>
+        <div class="interview-body">
+          <p class="interview-meta">新エネルギー開発部 代表　三上 成行</p>
+          <h3 style="margin:4px 0 8px; font-size:16px;">「地域を支える仕事の、裏方として」</h3>
+          <p style="font-size:14px;">
+            新エネルギー開発部は、社長と共に新たなエネルギーを発見したことから始まった部署です。
+            外からは見えにくい仕事ですが、今野原鉄道が毎日走れているのは、この部署があってこそだと自負しています。
+            （TODO：本文差し替え）
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="m-card">
+      <div class="interview">
+        <div class="interview-photo">写真（仮）</div>
+        <div class="interview-body">
+          <!-- TODO：名前は解雇通知書の対象者リストと揃える（一斉解雇された元社員がまだ載っている、という仕込み） -->
+          <p class="interview-meta">運行管理補助　（TODO：社員名）／2019年 キャリア入社</p>
+          <h3 style="margin:4px 0 8px; font-size:16px;">「未経験からでも、すぐに馴染めました」</h3>
+          <p style="font-size:14px;">
+            前職は全く別の業界でしたが、先輩方が丁寧に教えてくださり、すぐに仕事に慣れることができました。
+            最近は少し疲れやすいのですが、それだけやり甲斐のある仕事だということだと思います。
+            （TODO：本文差し替え）
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="m-card">
+      <div class="interview">
+        <div class="interview-photo">―</div>
+        <div class="interview-body">
+          <p class="interview-meta">運行管理補助　――</p>
+          <p style="font-size:14px; color:#6b7280;">この社員のインタビューは掲載を終了しました。</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="m-footer">
+    <p>Powered by キャリアゲート採用管理システム</p>
+    <p>このHPは実在するものと関係ありません。</p>
+  </footer>
+
+  <script src="js/mypage.js"></script>
+  <script>
+    requireLogin();
+  </script>
+</body>
+</html>

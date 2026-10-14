@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>エントリー | 今野原新鉄道株式会社 キャリア採用</title>
+  <link rel="stylesheet" href="css/mypage.css">
+</head>
+<body>
+
+  <header class="m-header">
+    <div class="m-header-inner">
+      <div class="m-brand">
+        今野原新鉄道株式会社 キャリア採用マイページ
+        <small>Imanohara Shin-Tetsudo Holdings / Career Entry</small>
+      </div>
+    </div>
+  </header>
+
+  <main class="m-main">
+
+    <section class="m-card">
+      <h2>エントリー情報の入力</h2>
+      <p style="font-size:14px;">
+        以下の項目をご入力のうえ、登録してください。登録完了後、すぐにマイページをご利用いただけます。
+      </p>
+
+      <!-- 質問項目は「普通の応募フォームに見えて、よく読むと不穏」になるよう設計。
+           TODO：質問文は友人と相談のうえ差し替え可 -->
+      <form onsubmit="submitEntry(event)">
+        <div class="form-row">
+          <label for="name">氏名<span class="req">必須</span></label>
+          <input type="text" id="name" name="name" required placeholder="例）今野原 太郎">
+        </div>
+
+        <div class="form-row">
+          <label for="kana">ふりがな</label>
+          <input type="text" id="kana" name="kana" placeholder="例）いまのはら たろう">
+        </div>
+
+        <div class="form-row">
+          <label for="email">メールアドレス</label>
+          <input type="email" id="email" name="email" placeholder="example@example.com">
+        </div>
+
+        <div class="form-row">
+          <label for="job">希望職種</label>
+          <select id="job" name="job">
+            <option>運行管理補助（新エネルギー開発部付）</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <span class="label">現在の健康状態</span>
+          <div class="choices">
+            <label><input type="radio" name="health" value="良好" checked> 良好</label>
+            <label><input type="radio" name="health" value="普通"> 普通</label>
+            <label><input type="radio" name="health" value="通院中"> 通院中</label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="family">同居しているご家族の人数</label>
+          <input type="number" id="family" name="family" min="0" value="0">
+          <p class="note">※ 一人暮らしの方は 0 とご入力ください。</p>
+        </div>
+
+        <div class="form-row">
+          <span class="label">今野原鉄道のご利用頻度</span>
+          <div class="choices">
+            <label><input type="radio" name="ride" value="毎日"> 毎日</label>
+            <label><input type="radio" name="ride" value="ときどき"> ときどき</label>
+            <label><input type="radio" name="ride" value="利用したことがない" checked> 利用したことがない</label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="emergency">緊急連絡先（任意）</label>
+          <input type="text" id="emergency" name="emergency">
+          <p class="note">※ 空欄でも選考には影響ございません。</p>
+        </div>
+
+        <button type="submit" class="m-button">同意して登録する</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="m-footer">
+    <p>Powered by キャリアゲート採用管理システム</p>
+    <p>
+      このHPは実在するものと関係ありません。<br>
+      ※ 入力内容はどこにも送信されず、お使いのブラウザ内にのみ保存されます。本名ではなく仮の名前での登録をおすすめします。
+    </p>
+  </footer>
+
+  <script src="js/mypage.js"></script>
+</body>
+</html>

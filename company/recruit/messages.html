@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>メッセージBOX | 今野原新鉄道株式会社 キャリア採用</title>
+  <link rel="stylesheet" href="css/mypage.css">
+</head>
+<body>
+
+  <header class="m-header">
+    <div class="m-header-inner">
+      <div class="m-brand">
+        今野原新鉄道株式会社 キャリア採用マイページ
+        <small>Imanohara Shin-Tetsudo Holdings / Career Entry</small>
+      </div>
+      <div class="m-user">
+        受付番号 <span data-applicant-id></span>　<span data-name></span> 様
+        <button onclick="logout()">ログアウト</button>
+      </div>
+    </div>
+  </header>
+  <nav class="m-nav">
+    <ul>
+      <li><a href="mypage.html">マイページTOP</a></li>
+      <li><a href="messages.html" class="is-current">メッセージBOX</a></li>
+      <li><a href="movie.html">会社紹介PV</a></li>
+      <li><a href="seminar.html">説明会アーカイブ</a></li>
+      <li><a href="interview.html">社員インタビュー</a></li>
+    </ul>
+  </nav>
+
+  <main class="m-main">
+    <section class="m-card">
+      <h2>メッセージBOX</h2>
+
+      <!-- 上が新しいメッセージ。data-day は登録日からの経過日数（受信日の表示に使用）。
+           data-requires がある項目は、そのフラグが立つまで表示しない。
+           ★謎解き導線：2通目「誤送信」メールの添付から解雇通知書へ進める -->
+      <ul class="msg-list">
+
+        <li data-day="1" data-requires="watched_seminar">
+          <details>
+            <summary><span class="msg-date"></span><span>【選考結果のご連絡】書類選考通過のお知らせ</span></summary>
+            <div class="msg-body">
+              <p><span data-name></span> 様</p>
+              <p>
+                厳正なる選考の結果、書類選考を通過されましたことをお知らせいたします。<br>
+                <span data-name></span> 様は、当社が求める「適性」を非常に高い水準で満たしておられます。<br>
+                最終面接の日程につきましては、追って担当者よりご連絡いたします。
+              </p>
+              <p>（TODO：最終面接の案内文。不穏さの強さは友人と相談）</p>
+              <p>今野原新鉄道株式会社 人事部 採用担当</p>
+            </div>
+          </details>
+        </li>
+
+        <li data-day="1">
+          <details>
+            <summary><span class="msg-date"></span><span>説明会アーカイブ公開のご案内</span></summary>
+            <div class="msg-body">
+              <p><span data-name></span> 様</p>
+              <p>
+                キャリア採用 会社説明会のアーカイブを公開いたしました。<br>
+                選考に必要となりますので、必ず最後までご視聴ください。
+              </p>
+              <p><a href="seminar.html">→ 説明会アーカイブを見る</a></p>
+              <p>今野原新鉄道株式会社 人事部 採用担当</p>
+            </div>
+          </details>
+        </li>
+
+        <li data-day="0">
+          <details>
+            <summary><span class="msg-date"></span><span>【お詫び】誤送信について</span></summary>
+            <div class="msg-body">
+              <p>エントリー者各位</p>
+              <p>
+                先ほど、本来社内宛てのメッセージを誤って皆様へ送信いたしました。<br>
+                添付ファイルは社内資料のため、開封せずに破棄していただきますようお願い申し上げます。<br>
+                ご迷惑をおかけし、誠に申し訳ございません。
+              </p>
+              <p>今野原新鉄道株式会社 人事部 採用担当</p>
+            </div>
+          </details>
+        </li>
+
+        <li data-day="0">
+          <details>
+            <summary><span class="msg-date"></span><span>Fw: 人員入替の件（社外秘）</span></summary>
+            <div class="msg-body">
+              <p>新エネルギー開発部 三上様</p>
+              <p>
+                お疲れ様です。人事部です。<br>
+                先日の一斉解雇の件、対外向けの通知書を添付にて共有いたします。<br>
+                キャリア採用の受付も予定どおり開始しております。条件に合う応募者は順次そちらへ回します。
+              </p>
+              <p>（TODO：本文は友人と相談のうえ差し替え）</p>
+              <a class="attachment" href="../hidden/notice-dismissal.html">📎 解雇通知書.pdf</a>
+            </div>
+          </details>
+        </li>
+
+        <li data-day="0">
+          <details>
+            <summary><span class="msg-date"></span><span>【今野原新鉄道】エントリー受付完了のお知らせ</span></summary>
+            <div class="msg-body">
+              <p><span data-name></span> 様</p>
+              <p>
+                この度は、今野原新鉄道株式会社のキャリア採用にエントリーいただき、誠にありがとうございます。<br>
+                受付番号：<span data-applicant-id></span><br>
+                今後のご案内は、すべてこちらのマイページにてお送りいたします。
+              </p>
+              <p>今野原新鉄道株式会社 人事部 採用担当</p>
+            </div>
+          </details>
+        </li>
+
+      </ul>
+    </section>
+  </main>
+
+  <footer class="m-footer">
+    <p>Powered by キャリアゲート採用管理システム</p>
+    <p>このHPは実在するものと関係ありません。</p>
+  </footer>
+
+  <script src="js/mypage.js"></script>
+  <script>
+    const profile = requireLogin();
+    if (profile) {
+      document.querySelectorAll(".msg-list > li").forEach((li) => {
+        const required = li.dataset.requires;
+        if (required && !hasFlag(required)) {
+          li.remove();
+          return;
+        }
+        li.querySelector(".msg-date").textContent =
+          dateFromRegistration(profile, Number(li.dataset.day));
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>会社紹介PV | 今野原新鉄道株式会社 キャリア採用</title>
+  <link rel="stylesheet" href="css/mypage.css">
+</head>
+<body>
+
+  <header class="m-header">
+    <div class="m-header-inner">
+      <div class="m-brand">
+        今野原新鉄道株式会社 キャリア採用マイページ
+        <small>Imanohara Shin-Tetsudo Holdings / Career Entry</small>
+      </div>
+      <div class="m-user">
+        受付番号 <span data-applicant-id></span>　<span data-name></span> 様
+        <button onclick="logout()">ログアウト</button>
+      </div>
+    </div>
+  </header>
+  <nav class="m-nav">
+    <ul>
+      <li><a href="mypage.html">マイページTOP</a></li>
+      <li><a href="messages.html">メッセージBOX</a></li>
+      <li><a href="movie.html" class="is-current">会社紹介PV</a></li>
+      <li><a href="seminar.html">説明会アーカイブ</a></li>
+      <li><a href="interview.html">社員インタビュー</a></li>
+    </ul>
+  </nav>
+
+  <main class="m-main">
+    <section class="m-card">
+      <h2>会社紹介PV「今野原新鉄道のいま」</h2>
+
+      <!-- TODO：動画が完成したら、下の video-box の中に次のどちらかを入れる
+           ・mp4 の場合：<video src="movie/pv.mp4" controls></video>
+           ・YouTube（限定公開）の場合：<iframe src="https://www.youtube.com/embed/動画ID" allowfullscreen></iframe>
+           入れたら「映像は現在準備中です」の文言は削除してください -->
+      <div class="video-box">
+        <p>映像は現在準備中です</p>
+      </div>
+
+      <h3 style="font-size:15px; margin-top:20px;">映像の内容</h3>
+      <!-- 動画制作をお願いする際の構成メモを兼ねる。動画が無くても雰囲気が伝わるよう文章で掲載 -->
+      <ol style="font-size:14px;">
+        <li>朝の今野原駅。始発列車が出発する様子</li>
+        <li>沿線の風景（飛賀野・美景など）とナレーション「地域の暮らしを、これからも」</li>
+        <li>新エネルギー開発部の紹介。施設内部は映さず、外観と社員の後ろ姿のみ</li>
+        <li>社長メッセージ「今野原鉄道は地球にやさしいクリーンなエネルギーでの運行をお約束します」</li>
+        <li>（TODO：手がかりになるカットを入れる場合はここ。ただし宵隠の駅名・ホームは沿革の写真で見つけさせるため、PVでは直接映さない）</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="m-footer">
+    <p>Powered by キャリアゲート採用管理システム</p>
+    <p>このHPは実在するものと関係ありません。</p>
+  </footer>
+
+  <script src="js/mypage.js"></script>
+  <script>
+    if (requireLogin()) setFlag("watched_pv");
+  </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>マイページ | 今野原新鉄道株式会社 キャリア採用</title>
+  <link rel="stylesheet" href="css/mypage.css">
+</head>
+<body>
+
+  <header class="m-header">
+    <div class="m-header-inner">
+      <div class="m-brand">
+        今野原新鉄道株式会社 キャリア採用マイページ
+        <small>Imanohara Shin-Tetsudo Holdings / Career Entry</small>
+      </div>
+      <div class="m-user">
+        受付番号 <span data-applicant-id></span>　<span data-name></span> 様
+        <button onclick="logout()">ログアウト</button>
+      </div>
+    </div>
+  </header>
+  <nav class="m-nav">
+    <ul>
+      <li><a href="mypage.html" class="is-current">マイページTOP</a></li>
+      <li><a href="messages.html">メッセージBOX</a></li>
+      <li><a href="movie.html">会社紹介PV</a></li>
+      <li><a href="seminar.html">説明会アーカイブ</a></li>
+      <li><a href="interview.html">社員インタビュー</a></li>
+    </ul>
+  </nav>
+
+  <main class="m-main">
+
+    <section class="m-card">
+      <h2><span data-name></span> 様、ようこそ</h2>
+      <p>
+        この度は今野原新鉄道株式会社のキャリア採用にエントリーいただき、誠にありがとうございます。<br>
+        選考に先立ち、会社紹介PVおよび説明会アーカイブを必ずご視聴ください。
+      </p>
+      <p>未読のメッセージがあります → <a href="messages.html">メッセージBOXを開く</a><span class="badge badge-new">NEW</span></p>
+    </section>
+
+    <div class="m-grid" style="margin-bottom:20px;">
+      <a class="m-tile" href="messages.html">
+        <strong>メッセージBOX</strong>
+        <span>採用担当からのご連絡</span>
+      </a>
+      <a class="m-tile" href="movie.html">
+        <strong>会社紹介PV</strong>
+        <span>今野原新鉄道のいま（約3分）</span>
+      </a>
+      <a class="m-tile" href="seminar.html">
+        <strong>説明会アーカイブ</strong>
+        <span>キャリア採用 会社説明会（文字起こし付き）</span>
+      </a>
+      <a class="m-tile" href="interview.html">
+        <strong>社員インタビュー</strong>
+        <span>現場で働く社員の声</span>
+      </a>
+    </div>
+
+    <section class="m-card">
+      <h2>選考状況</h2>
+      <ul class="status-list" id="statusList"></ul>
+    </section>
+
+  </main>
+
+  <footer class="m-footer">
+    <p>Powered by キャリアゲート採用管理システム</p>
+    <p>このHPは実在するものと関係ありません。</p>
+  </footer>
+
+  <script src="js/mypage.js"></script>
+  <script>
+    const profile = requireLogin();
+    if (profile) {
+      const watchedPV = hasFlag("watched_pv");
+      const watchedSeminar = hasFlag("watched_seminar");
+      const passed = watchedPV && watchedSeminar;
+
+      // 視聴が進むほど選考ステータスが進んでいく（＝少しずつ不穏になる）
+      // TODO：ステータス文言は友人と相談のうえ差し替え可
+      const steps = [
+        ["エントリー", "完了（" + dateFromRegistration(profile, 0) + "）", true],
+        ["会社紹介PV 視聴", watchedPV ? "視聴済み" : "未視聴", watchedPV],
+        ["説明会アーカイブ 視聴", watchedSeminar ? "視聴済み" : "未視聴", watchedSeminar],
+        ["書類選考", passed ? "通過" : "視聴完了後に開始します", passed],
+        ["適性検査", passed ? "適合（適合率 98.2%）" : "―", passed],
+        ["最終面接", passed ? "日程調整中（担当者よりご連絡いたします）" : "―", false],
+      ];
+
+      const list = document.getElementById("statusList");
+      steps.forEach(([label, value, done]) => {
+        const li = document.createElement("li");
+        const left = document.createElement("span");
+        left.textContent = label;
+        const right = document.createElement("span");
+        right.textContent = value;
+        right.className = done ? "status-done" : "status-wait";
+        li.append(left, right);
+        list.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>
